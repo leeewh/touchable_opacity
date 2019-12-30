@@ -18,12 +18,13 @@ class TouchableOpacity extends StatefulWidget {
   /// By default, gesture detectors contribute semantic information to the tree
   /// that is used by assistive technology.
   TouchableOpacity({
+    Key key,
     @required this.child,
     this.activeOpacity = 0.2,
     this.onTapDown,
     this.onTapUp,
     this.onTap,
-    this.key,
+    
     this.onTapCancel,
     this.onDoubleTap,
     this.onLongPress,
