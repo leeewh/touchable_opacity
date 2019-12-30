@@ -23,6 +23,7 @@ class TouchableOpacity extends StatefulWidget {
     this.onTapDown,
     this.onTapUp,
     this.onTap,
+    this.key,
     this.onTapCancel,
     this.onDoubleTap,
     this.onLongPress,
@@ -83,7 +84,7 @@ class TouchableOpacity extends StatefulWidget {
           }
           return true;
         }()),
-        super(key: _key);
+        super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -503,7 +504,7 @@ class _TouchableOpacityState extends State<TouchableOpacity>
   }
 
   void _onTapDown(TapDownDetails details) {
-    if ( activeOpacity != 1.0 ) {
+    if (activeOpacity != 1.0) {
       _controller.reverse();
     }
     if (onTapDown != null) {
@@ -512,7 +513,7 @@ class _TouchableOpacityState extends State<TouchableOpacity>
   }
 
   void _onTapUp(TapUpDetails details) {
-    if ( activeOpacity != 1.0 ) {
+    if (activeOpacity != 1.0) {
       _controller.forward();
     }
     if (onTapUp != null) {
@@ -521,7 +522,7 @@ class _TouchableOpacityState extends State<TouchableOpacity>
   }
 
   void _onTapCancel() {
-    if ( activeOpacity != 1.0 ) {
+    if (activeOpacity != 1.0) {
       _controller.forward();
     }
     if (onTapCancel != null) {
